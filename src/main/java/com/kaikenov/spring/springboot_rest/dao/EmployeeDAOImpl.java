@@ -9,6 +9,7 @@ import javax.persistence.Query;
 import java.util.List;
 
 @Repository
+@Deprecated
 public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Autowired

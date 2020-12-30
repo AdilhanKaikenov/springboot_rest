@@ -60,4 +60,9 @@ public class MyRestController {
 
         return "Employee with ID = " + id + " was deleted.";
     }
+
+    @GetMapping("/employees/name/{name}")
+    public List<Employee> showAllEmployeesByName(@PathVariable("name") String name) {
+        return employeeService.getAllEmployeesByName(name);
+    }
 }
