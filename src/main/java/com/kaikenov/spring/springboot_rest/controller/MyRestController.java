@@ -1,6 +1,7 @@
 package com.kaikenov.spring.springboot_rest.controller;
 
 import com.kaikenov.spring.springboot_rest.entity.Employee;
+import com.kaikenov.spring.springboot_rest.exception_handling.NoSuchEmployeeException;
 import com.kaikenov.spring.springboot_rest.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,10 +26,10 @@ public class MyRestController {
     public Employee getEmployee(@PathVariable("id") int id) {
         Employee employee = employeeService.getEmployee(id);
 
-//        if (employee == null) {
-//            throw new NoSuchEmployeeException("There is no employee with ID = " +
-//                    id + " in Database");
-//        }
+        if (employee == null) {
+            throw new NoSuchEmployeeException("There is no employee with ID = " +
+                    id + " in Database");
+        }
 
         return employee;
     }
@@ -51,10 +52,10 @@ public class MyRestController {
     public String deleteEmployee(@PathVariable("id") int id) {
         Employee employee = employeeService.getEmployee(id);
 
-//        if (employee == null) {
-//            throw new NoSuchEmployeeException("There is no employee with ID = " +
-//                    id + " in Database");
-//        }
+        if (employee == null) {
+            throw new NoSuchEmployeeException("There is no employee with ID = " +
+                    id + " in Database");
+        }
 
         employeeService.deleteEmployee(id);
 
