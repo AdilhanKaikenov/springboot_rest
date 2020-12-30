@@ -12,3 +12,4 @@ Spring Boot makes the programmer's job easier in the following ways:
 - Spring Data JPA
   - Jpa Repository
 - Spring REST API Exception Handling 
+- Spring Boot Actuator
